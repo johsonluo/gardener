@@ -10,6 +10,7 @@ spec:
     kind: Hvpa
     plural: hvpas
   scope: ""
+  preserveUnknownFields: false
   subresources:
     scale:
       labelSelectorPath: .status.targetSelector

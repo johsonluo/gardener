@@ -364,6 +364,7 @@ spec:
       specReplicasPath: .spec.replicas
       statusReplicasPath: .status.replicas
     status: {}
+  preserveUnknownFields: false
   validation:
     openAPIV3Schema:
       description: Etcd is the Schema for the etcds API

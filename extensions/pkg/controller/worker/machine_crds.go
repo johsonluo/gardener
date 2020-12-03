@@ -26,6 +26,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	utilruntime "k8s.io/apimachinery/pkg/util/runtime"
 	"k8s.io/client-go/rest"
+	"k8s.io/utils/pointer"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 )
@@ -57,9 +58,10 @@ func init() {
 				Name: "machinedeployments.machine.sapcloud.io",
 			},
 			Spec: apiextensionsv1beta1.CustomResourceDefinitionSpec{
-				Group:   machineGroup,
-				Version: machineVersion,
-				Scope:   apiextensionsv1beta1.NamespaceScoped,
+				Group:                 machineGroup,
+				PreserveUnknownFields: pointer.BoolPtr(true),
+				Version:               machineVersion,
+				Scope:                 apiextensionsv1beta1.NamespaceScoped,
 				Names: apiextensionsv1beta1.CustomResourceDefinitionNames{
 					Kind:       "MachineDeployment",
 					Plural:     "machinedeployments",
@@ -103,9 +105,10 @@ func init() {
 				Name: "machinesets.machine.sapcloud.io",
 			},
 			Spec: apiextensionsv1beta1.CustomResourceDefinitionSpec{
-				Group:   machineGroup,
-				Version: machineVersion,
-				Scope:   apiextensionsv1beta1.NamespaceScoped,
+				Group:                 machineGroup,
+				PreserveUnknownFields: pointer.BoolPtr(true),
+				Version:               machineVersion,
+				Scope:                 apiextensionsv1beta1.NamespaceScoped,
 				Names: apiextensionsv1beta1.CustomResourceDefinitionNames{
 					Kind:       "MachineSet",
 					Plural:     "machinesets",
@@ -143,9 +146,10 @@ func init() {
 				Name: "machines.machine.sapcloud.io",
 			},
 			Spec: apiextensionsv1beta1.CustomResourceDefinitionSpec{
-				Group:   machineGroup,
-				Version: machineVersion,
-				Scope:   apiextensionsv1beta1.NamespaceScoped,
+				Group:                 machineGroup,
+				PreserveUnknownFields: pointer.BoolPtr(true),
+				Version:               machineVersion,
+				Scope:                 apiextensionsv1beta1.NamespaceScoped,
 				Names: apiextensionsv1beta1.CustomResourceDefinitionNames{
 					Kind:       "Machine",
 					Plural:     "machines",
@@ -171,9 +175,10 @@ func init() {
 				Name: "machineclasses.machine.sapcloud.io",
 			},
 			Spec: apiextensionsv1beta1.CustomResourceDefinitionSpec{
-				Group:   machineGroup,
-				Version: machineVersion,
-				Scope:   apiextensionsv1beta1.NamespaceScoped,
+				Group:                 machineGroup,
+				PreserveUnknownFields: pointer.BoolPtr(true),
+				Version:               machineVersion,
+				Scope:                 apiextensionsv1beta1.NamespaceScoped,
 				Names: apiextensionsv1beta1.CustomResourceDefinitionNames{
 					Kind:       "MachineClass",
 					Plural:     "machineclasses",
@@ -315,9 +320,10 @@ func init() {
 				Name: current.name + "machineclasses.machine.sapcloud.io",
 			},
 			Spec: apiextensionsv1beta1.CustomResourceDefinitionSpec{
-				Group:   machineGroup,
-				Version: machineVersion,
-				Scope:   apiextensionsv1beta1.NamespaceScoped,
+				Group:                 machineGroup,
+				PreserveUnknownFields: pointer.BoolPtr(true),
+				Version:               machineVersion,
+				Scope:                 apiextensionsv1beta1.NamespaceScoped,
 				Names: apiextensionsv1beta1.CustomResourceDefinitionNames{
 					Kind:       current.kind + "MachineClass",
 					Plural:     current.name + "machineclasses",

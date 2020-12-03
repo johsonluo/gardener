@@ -5,12 +5,14 @@ kind: CustomResourceDefinition
 metadata:
   name: verticalpodautoscalercheckpoints.autoscaling.k8s.io
   annotations:
+    "api-approved.kubernetes.io": "https://github.com/kubernetes/kubernetes/pull/63797"
     resources.gardener.cloud/keep-object: "true"
   labels:
 {{ toYaml .Values.labels | indent 4 }}
 spec:
   group: autoscaling.k8s.io
   scope: Namespaced
+  preserveUnknownFields: true
   names:
     plural: verticalpodautoscalercheckpoints
     singular: verticalpodautoscalercheckpoint
